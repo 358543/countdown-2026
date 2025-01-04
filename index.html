@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 50px;
+        }
+        .countdown {
+            font-size: 2em;
+            color: #333;
+        }
+        .countdown div {
+            display: inline-block;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .countdown span {
+            font-size: 1.5em;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Countdown to 2026</h1>
+    <div class="countdown">
+        <div>
+            <span id="days">0</span> Days
+        </div>
+        <div>
+            <span id="hours">0</span> Hours
+        </div>
+        <div>
+            <span id="minutes">0</span> Minutes
+        </div>
+        <div>
+            <span id="seconds">0</span> Seconds
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("January 1, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (timeRemaining < 0) {
+                document.querySelector(".countdown").innerHTML = "Countdown finished!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+              </html>
+              
