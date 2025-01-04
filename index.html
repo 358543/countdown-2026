@@ -1,76 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to 2026</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            padding: 50px;
-        }
-        .countdown {
-            font-size: 2em;
-            color: #333;
-        }
-        .countdown div {
-            display: inline-block;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-            margin: 10px;
-            border-radius: 5px;
-        }
-        .countdown span {
-            font-size: 1.5em;
-            display: block;
-        }
-    </style>
+<title>Countdown to 2026</title>
+<style>
+body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 2em;
+}
+
+.time-unit {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+</style>
 </head>
 <body>
 
-    <h1>Countdown to 2026</h1>
-    <div class="countdown">
-        <div>
-            <span id="days">0</span> Days
-        </div>
-        <div>
-            <span id="hours">0</span> Hours
-        </div>
-        <div>
-            <span id="minutes">0</span> Minutes
-        </div>
-        <div>
-            <span id="seconds">0</span> Seconds
-        </div>
-    </div>
+<div class="container">
+  <h1>Countdown to 2026</h1>
+  <div id="countdown"></div>
+</div>
 
-    <script>
-        function updateCountdown() {
-            const targetDate = new Date("January 1, 2026 00:00:00").getTime();
-            const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
+<script>
+// Set the countdown date (January 1, 2026)
+const countDownDate = new Date("January 1, 2026 00:00:00").getTime();
 
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+// Update the countdown every second
+const x = setInterval(function() {
 
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
+  // Get today's date and time
+  const now = new Date().getTime();
 
-            if (timeRemaining < 0) {
-                document.querySelector(".countdown").innerHTML = "Countdown finished!";
-            }
-        }
+  // Find the distance between now and the countdown date
+  const distance = countDownDate - now;
 
-        setInterval(updateCountdown, 1000);
-    </script>
+  // Time calculations for days, hours, minutes, and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = `
+    <span class="time-unit">${days}d</span> 
+    <span class="time-unit">${hours}h</span> 
+    <span class="time-unit">${minutes}m</span> 
+    <span class="time-unit">${seconds}s</span>
+  `;
+
+  // If the countdown is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
 </body>
-              </html>
-              
+</html>
