@@ -4,6 +4,14 @@ const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
 
+// Automatically play the music with user interaction
+const backgroundMusic = document.getElementById('backgroundMusic');
+document.body.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+  }
+});
+
 function updateCountdown() {
   const targetDate = new Date('January 1, 2026 00:00:00').getTime();
   const now = new Date().getTime();
@@ -22,3 +30,4 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+                          
