@@ -1,0 +1,102 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Countdown container */
+.countdown-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #f3f3f3;
+}
+
+/* Countdown layout */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.time {
+  text-align: center;
+  flex: 1;
+}
+
+.time span {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.time p {
+  margin-top: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ccc;
+}
+
+/* Year text */
+.year {
+  font-size: 3.5rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #00e0ff;
+}
+
+/* Button styles */
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #00e0ff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #008ecc;
+}
+
+/* Footer text */
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+footer span {
+  color: #00e0ff;
+  font-weight: bold;
+}
+  
