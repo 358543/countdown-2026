@@ -42,11 +42,12 @@ body {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
-  min-width: 100px;
+  min-width: 100px; /* Ensure consistent width for all boxes */
+  text-transform: uppercase;
 }
 
 .time-box span:first-child {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; /* Adds spacing between the label and the number */
 }
