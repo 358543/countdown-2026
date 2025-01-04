@@ -3,39 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Year Countdown</title>
+  <title>Countdown to 2026</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <audio id="bg-music" autoplay loop>
-    <source src="your-music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
   <div class="countdown-container">
-    <h1>New Year Countdown</h1>
-    <div class="countdown">
-      <div class="time">
-        <span id="days">00</span>
-        <p>Days</p>
+    <h1>Countdown to 2026</h1>
+    <div class="countdown" id="countdown">
+      <div>
+        <span id="days">0</span>
+        <span>Days</span>
       </div>
-      <div class="time">
-        <span id="hours">00</span>
-        <p>Hours</p>
+      <div>
+        <span id="hours">0</span>
+        <span>Hours</span>
       </div>
-      <div class="time">
-        <span id="minutes">00</span>
-        <p>Minutes</p>
+      <div>
+        <span id="minutes">0</span>
+        <span>Minutes</span>
       </div>
-      <div class="time">
-        <span id="seconds">00</span>
-        <p>Seconds</p>
+      <div>
+        <span id="seconds">0</span>
+        <span>Seconds</span>
       </div>
     </div>
-    <h2 class="year">2026</h2>
-    <button id="toggle-music">Pause Music</button>
-    <footer>
-      <p>This website was developed by <span>Lee Yeon</span></p>
-    </footer>
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="background-music.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
   </div>
   <script src="script.js"></script>
 </body>
