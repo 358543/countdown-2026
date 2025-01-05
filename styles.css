@@ -28,13 +28,28 @@ body {
 .countdown-container h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.animated-text {
+  display: inline-block;
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00, 0 0 20px #ff6a00; }
+  100% { text-shadow: 0 0 10px #ee0979, 0 0 20px #ee0979, 0 0 40px #ee0979; }
 }
 
 .countdown {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .time-box {
@@ -42,12 +57,19 @@ body {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
-  min-width: 100px; /* Ensure consistent width for all boxes */
+  min-width: 100px;
   text-transform: uppercase;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 .time-box span:first-child {
   font-size: 4rem;
   font-weight: bold;
-  margin-top: 0.5rem; /* Adds spacing between the label and the number */
+  margin-bottom: 0.5rem;
 }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  }
+  
