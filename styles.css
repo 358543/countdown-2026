@@ -7,6 +7,7 @@ body {
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -24,8 +25,12 @@ body {
 
 /* Countdown Container */
 .countdown-container {
-  max-width: 90%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  margin-bottom: 50px; /* Add more space for the footer */
 }
 
 /* Title Animation */
@@ -50,6 +55,7 @@ body {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  padding-bottom: 2rem; /* Add space at the bottom */
 }
 
 .time-box {
@@ -81,5 +87,29 @@ body {
   text-transform: uppercase;
   margin-top: 0.5rem;
   color: #ffffff;
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+footer a {
+  color: #ffdf00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
         }
-  
